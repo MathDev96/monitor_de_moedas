@@ -1,5 +1,24 @@
-<% @chart_data.each do |chart| %>
-    <div>
-        <%= line_chart chart%>
+<div class="container">
+  <h2>Gráficos de Tendência das Moedas</h2>
+
+  <% @chart_data.group_by { |c| c[:name].split.first }.each do |currency_name, charts| %>
+    <h3><%= currency_name %></h3>
+    <div class="chart-box">
+      <%= line_chart charts, xtitle: "Data", ytitle: "Preço (BRL)",
+points: false, curve: true, legend: true %>
     </div>
-<% end %>
+  <% end %>
+
+  <h2>Última Cotação das Moedas</h2>
+  <div class="chart-box">
+    <% latest_data = @chart_data.select { |c| !c[:name].include?("MA5") && !c[:name].include?("Prev") }
+.map { |chart| [chart[:name], chart[:data].values.last] }.to_h %>
+    <%= pie_chart latest_data, donut: true %>
+  </div>
+
+  <h2>Última Cotação em Barras</h2>
+
+  <div class="chart-box">
+    <%= bar_chart latest_data %>
+  </div>
+</div>

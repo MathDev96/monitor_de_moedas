@@ -1,15 +1,62 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #e0f0ff, #f0f4f8);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 21px;
+}
+
+/* Cada gráfico */
+.chart-box {
+  margin-bottom: 40px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa; /* levemente mais claro que o container */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .chart-box {
+    padding: 10px;
+  }
+}
+
+/* Estilo dos gráficos Chartkick com fundo transparente */
+.ck-chart {
+  background-color: transparent !important;
+}
+
+/* Customização de cores dos gráficos */
+.ck-series-0 {
+  stroke: #1f77b4 !important; /* azul */
+  fill: #1f77b4 !important;
+}
+
+.ck-series-1 {
+  stroke: #ff7f0e !important; /* laranja */
+  fill: #ff7f0e !important;
+}
+
+.ck-series-2 {
+  stroke: #2ca02c !important; /* verde */
+  fill: #2ca02c !important;
+}
