@@ -1,24 +1,30 @@
-# README
+# Monitor de Moedas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto Ruby on Rails para monitoramento e visualização de tendências de moedas.
 
-Things you may want to cover:
+## Requisitos
 
-* Ruby version
+- Ruby 3.1.4
+- Rails 7.2.2.1
 
-* System dependencies
+## Como executar
 
-* Configuration
+```bash
+bundle install
+rails server
+```
 
-* Database creation
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-* Database initialization
+## Funcionalidades
 
-* How to run the test suite
+- Visualização de gráficos de tendência das moedas
+- Exibição das últimas cotações em gráficos de pizza e barras
 
-* Services (job queues, cache servers, search engines, etc.)
+## API utilizada
 
-* Deployment instructions
+- [AwesomeAPI - Moedas](https://docs.awesomeapi.com.br/api-de-moedas)
 
-* ...
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
